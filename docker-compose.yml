@@ -1,0 +1,18 @@
+version: '3'
+services:
+  node-clean-backend:
+    container_name: node-clean-backend
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    env_file:
+      - .env
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    links:
+      - redis
+  redis:
+    image: 'redis'

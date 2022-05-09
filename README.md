@@ -1,0 +1,1 @@
+# Example of Node with Clean (not full implementation) Architecture
